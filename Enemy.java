@@ -12,15 +12,20 @@ public class Enemy extends Mover {
     private int xMax;
     private boolean firstAct;
     private int speed;
+    private double gravity;
+    private double acc;
 
     public Enemy() {
         super();
-        setImage("pokerMad.png");
+        setImage("slimeWalk1.png");
         getImage().mirrorHorizontally();
         walkRange = 140;
+        gravity = 9.8;
         firstAct = true;
+        acc = 0.6;
         speed = 1;
     }
+    
 
     @Override
     public void act() {
@@ -33,7 +38,7 @@ public class Enemy extends Mover {
             xMax = x + walkRange / 2;
         }
 
-        velocityX = speed;
+        velocityX = speed; 
         applyVelocity();
         if (getX() >= xMax) {
             speed *= -1;
