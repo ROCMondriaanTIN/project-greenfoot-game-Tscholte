@@ -86,15 +86,16 @@ public class CopyOfMyWorld extends World {
         camera.follow(hero);
         
         
-        //Stars ster = new Stars();
+        
 
         // Alle objecten toevoegen aan de wereld: camera, main karakter en mogelijke enemies
         addObject(camera, 0, 0);
         addObject(hero, 1100, 1100);
         addObject(new Enemy(), 3000, 400);
-        //addObject(ster,1000,1000);
-        
-        
+        addObject(new Stars(),1400,1100);
+        addObject(new Stars(),1300,1100);
+        addObject(new Stars(),1200,1100);
+        addObject(new Stars(),1100,1100);
         // Initialiseren van de CollisionEngine zodat de speler niet door de tile heen kan lopen.
         // De collision engine kijkt alleen naar de tiles die de variabele solid op true hebben staan.
         ce = new CollisionEngine(te, camera);

@@ -41,7 +41,7 @@ public class Hero extends Mover {
             if (ster != null){
                 stars++;
                 getWorld().removeObject(ster);
-                break;
+                return;
             }
         }
 
@@ -50,7 +50,16 @@ public class Hero extends Mover {
                 setImage("p1_hurt.png");
                 setLocation(300, 200);
                 Dc ++;
-                break;
+                return;
+            }
+        }
+        
+        for (Actor lava : getIntersectingObjects(LavaTile.class)) {
+            if (lava != null) {
+                setImage("p1_hurt.png");
+                setLocation(300, 200);
+                Dc ++;
+                return;
             }
         }
        

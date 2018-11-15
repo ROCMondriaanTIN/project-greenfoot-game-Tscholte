@@ -1012,7 +1012,7 @@ case 303:
      tile.isSolid = true;
 break;
 case 305:
-tile = new Tile("liquidLavaTop_mid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+tile = new LavaTile("liquidLavaTop_mid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
      tile.isSolid = true;
 break;
  default:
