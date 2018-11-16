@@ -344,7 +344,6 @@ break;
 break;
  case 89:
   tile = new Tile("flagBlue.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-     tile.isSolid = true;
 break;
  case 90:
   tile = new Tile("flagBlue2.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
@@ -354,6 +353,7 @@ break;
 break;
  case 92:
   tile = new Tile("flagGreen.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+  
 break;
  case 93:
   tile = new Tile("flagGreen2.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
@@ -381,7 +381,7 @@ break;
 break;
  case 104:
   tile = new Tile("gemBlue.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-     tile.isSolid = true;
+     tile.isSolid = false;
 break;
  case 105:
   tile = new Tile("gemGreen.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);

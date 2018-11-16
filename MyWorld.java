@@ -15,8 +15,10 @@ public class MyWorld extends World {
      */
     public MyWorld() {
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(1000, 800, 1, false);
+        
+        super(1100, 800, 1, false);
         this.setBackground("bg.png");
+        
         
         int[][] map = {
             {-1,51,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,51,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,51,-1,-1,51,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,51,-1,51,-1,51,-1,-1,-1,-1},
@@ -44,7 +46,7 @@ public class MyWorld extends World {
 {-1,-1,51,301,-1,-1,51,-1,-1,301,-1,301,-1,51,-1,-1,51,-1,-1,-1,-1,-1,51,-1,-1,-1,-1,-1,-1,-1,-1,51,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,49,32,32,32,32},
 {-1,-1,51,-1,-1,-1,301,-1,-1,-1,-1,-1,-1,301,-1,-1,51,-1,-1,-1,-1,-1,51,-1,-1,-1,-1,-1,-1,-1,-1,51,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,49,32,32,32,32,32},
 {-1,-1,301,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,51,-1,-1,-1,-1,-1,51,-1,-1,-1,-1,-1,-1,-1,-1,51,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,49,32,32,32,32,32,32},
-{-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,301,-1,-1,-1,-1,-1,51,-1,-1,-1,-1,-1,-1,-1,-1,51,-1,92,-1,-1,-1,-1,-1,-1,-1,-1,49,32,32,32,32,32,32,32},
+{-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,301,-1,-1,-1,-1,-1,51,-1,-1,-1,-1,-1,-1,-1,-1,51,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,49,32,32,32,32,32,32,32},
 {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,32,32,32,32,32,32,32,32},
 {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
 {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
@@ -83,29 +85,39 @@ public class MyWorld extends World {
         Hero hero = new Hero();
 
         // Laat de camera een object volgen. Die moet een Mover instatie zijn of een extentie hiervan.
-        camera.follow(hero);
+        
         
         
         //Stars ster = new Stars();
 
         // Alle objecten toevoegen aan de wereld: camera, main karakter en mogelijke enemies
+        addObject(hero, 150, 852);
         addObject(camera, 0, 0);
-        addObject(hero, 1100, 1100);
+        camera.follow(hero);
         addObject(new Enemy(), 3000, 400);
         addObject(new Stars(),1300,1000);
         addObject(new Stars(),1100,1000);
         addObject(new Stars(),1200,1000);
-        
-        
+        addObject(new P2coin(),2000,1000);
+
         // Initialiseren van de CollisionEngine zodat de speler niet door de tile heen kan lopen.
         // De collision engine kijkt alleen naar de tiles die de variabele solid op true hebben staan.
         ce = new CollisionEngine(te, camera);
         // Toevoegen van de mover instantie of een extentie hiervan
         ce.addCollidingMover(hero);
+        
     }
         
     @Override
     public void act() {
         ce.update();
+        
+        if (Hero.isDead==true){
+            
+            CopyOfMyWorld d = new CopyOfMyWorld();
+            Greenfoot.setWorld(d);
+        }
     }
+    
+    
 }

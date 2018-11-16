@@ -63,6 +63,7 @@ public class Mover extends Actor {
         this.worldY = y;
     }
 
+
     @Override
     public int getX() {
         return this.worldX;
