@@ -6,32 +6,47 @@ import greenfoot.*;
  * @author R. Springer
  */
 public class Hero extends Mover {
-
-    private final double gravity;
-    private final double acc;
-    private final double drag;
+    
+    public double gravity;
+    public double acc;
+    public double drag;
+    private int y = 1;
+    private String teller;
     public int Dc;
-    public int stars;
-    public int Spring = -14;
-    public int A = -10;
-    public int Dsnelheid = 10;
+    public static int stars;
+    public int Spring;
+    public int Aspeed;
+    public int Dspeed;
     public static boolean keyG;
     public static boolean keyB;
     public static boolean keyY;
     public static boolean keyO;
     public static boolean isDead;
+    public static String hero = "p1";
+    public static String J;
+    public static String S;
+    public static String H;
+    public static String W;
+    public static String D;
     
-
     public Hero() {
         super();
         gravity = 9.8;
         acc = 0.6;
         drag = 0.8;
         setImage("p1.png");
+        Spring = -14;    
+        Aspeed = -15;
+        Dspeed = 15;
     }
 
     @Override
     public void act() {
+        J = hero + "_jump.png";
+        S = hero + "_stand.png";
+        H = hero + "_hurt.png";
+        W = hero + "_walk";
+        D = hero + "_duck.png";
         handleInput();
         
         velocityX *= drag;
@@ -54,28 +69,52 @@ public class Hero extends Mover {
         
         for (Actor coin : getIntersectingObjects(P2coin.class)) {
             if (coin != null){
-                
                 getWorld().removeObject(coin);
+                setImage(S);
+                return;
+            }
+        }
+        
+        for (Actor coin : getIntersectingObjects(p3coin.class)) {
+            if (coin != null){
+                getWorld().removeObject(coin);
+                setImage(S);
+                return;
+            }
+        }
+        
+        for (Actor coin : getIntersectingObjects(p1coin.class)) {
+            if (coin != null){
+                hero="p1";
+                Spring=-14;
+                Aspeed=-15;
+                Dspeed=15;
+                getWorld().removeObject(coin);
+                setImage(S);
                 return;
             }
         }
 
         for (Actor enemy : getIntersectingObjects(Enemy.class)) {
-            if (enemy != null) {
-                setImage("p1_hurt.png");
+            if (enemy != null) { 
+                 setImage(H);
                 isDead=true;
                 getWorld().removeObject(this);
                 Dc ++;
+                hero = "p1";
+                stars = 0;
                 return;
             }
         }
         
         for (Actor lava : getIntersectingObjects(LavaTile.class)) {
             if (lava != null) {
-                setImage("p1_hurt.png");
+                setImage(H);
                 isDead=true;
                 getWorld().removeObject(this);
                 Dc ++;
+                hero="p1";
+                stars=0;
                 return;
             }
         }
@@ -89,21 +128,40 @@ public class Hero extends Mover {
     }
     
     public void handleInput() {
+        
+        
         if (Greenfoot.isKeyDown("w") && opGrond() == true) {
+            setImage(J);
             velocityY = Spring;
-            setImage("p1_jump.png");
+            
+            
         }
 
         if (Greenfoot.isKeyDown("a")) {
-            velocityX = A;
+            velocityX = Aspeed;
+            if(velocityY != 0){
+                setImage(J);
+                getImage().mirrorHorizontally();
+            }
+            else{
+                animation();
+                getImage().mirrorHorizontally();
+            }
         } else if (Greenfoot.isKeyDown("d")) {
-            velocityX = Dsnelheid;
+            velocityX = Dspeed;
+            if(velocityY != 0){
+                setImage(J);
+            }
+            else{
+                animation();
+            }
         }
 
         if (Greenfoot.isKeyDown("s")) {
-            setImage("p1_duck.png");
+            setImage(D);
         }
-        setImage("p1.png");
+        
+        
     }
 
     public int getWidth() {
@@ -112,5 +170,18 @@ public class Hero extends Mover {
 
     public int getHeight() {
         return getImage().getHeight();
+    }
+    
+    public void animation(){
+        String dir = "images/"+W+"/PNG/"+W;
+        if (y != 12){
+            teller= Integer.toString(y);
+            y++;
+        }
+        else if (y==12){
+            y =1;
+        }
+        
+        setImage (dir+teller+".png");
     }
 }

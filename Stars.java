@@ -24,7 +24,7 @@ public class Stars extends Mover
     {
         velocityY = 0;
         applyVelocity();
-        
+        getWorld().showText("Sterren = " + Integer.toString(Hero.stars),950,100);
         
     }    
 }
