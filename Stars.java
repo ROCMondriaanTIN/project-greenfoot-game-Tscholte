@@ -8,13 +8,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Stars extends Mover
 {
+    
+    public static int stars;
+     static boolean isCollected;
     public Stars(){
         super();
         setImage("star.png");
         
-    } 
-    
-    
+    }
     
     /**
      * Act - do whatever the Stars wants to do. This method is called whenever
@@ -24,7 +25,16 @@ public class Stars extends Mover
     {
         velocityY = 0;
         applyVelocity();
-        getWorld().showText("Sterren = " + Integer.toString(Hero.stars),950,100);
+        if (this.isTouching(Hero.class)){
+            isCollected = true;
+            stars++;
+            getWorld().removeObject(this);
+            return;
+        }
+        
+        if (isCollected==true){
+            
+        }
         
     }    
 }

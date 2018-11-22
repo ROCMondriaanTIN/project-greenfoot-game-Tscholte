@@ -1,20 +1,20 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class p3coin here.
+ * Write a description of class diamand here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class p1coin extends P2coin
+public class diamand extends Mover
 {
-    
-    public p1coin(){
-    super();
-    setImage("hud_p1.png");
+    public diamand(){
+        super();    
+        setImage("hud_gem_blue.png");
     }
+    
     /**
-     * Act - do whatever the p3coin wants to do. This method is called whenever
+     * Act - do whatever the diamand wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
@@ -22,7 +22,10 @@ public class p1coin extends P2coin
         velocityY=0;
         applyVelocity();
         if (this.isTouching(Hero.class)){
-            Hero.hero="p1";
+            Hero.Rihanna = true;
+            getWorld().removeObject(this);
+            return;
         }
+        
     }    
 }

@@ -1,16 +1,16 @@
-
+import greenfoot.*;
 /**
  *
  * @author R. Springer
  */
 public class TileFactory {
-
     /**
      * Creates a Tile object based on the mapIcon number you give
      *
      * @param mapIcon number
      * @return Tile tile object
      */
+    private World world;
     public static Tile createTile(int mapIcon) {
         Tile tile;
         switch (mapIcon) {case 0:
@@ -685,7 +685,6 @@ break;
 break;
  case 217:
   tile = new Tile("ropeVertical.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-     tile.isSolid = true;
 break;
  case 218:
   tile = new Tile("sand.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
@@ -1015,7 +1014,36 @@ case 305:
 tile = new LavaTile("liquidLavaTop_mid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
      tile.isSolid = true;
 break;
- default:
+case 306:
+tile = new Water("liquidWaterTop_mid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+    tile.isSolid = true; 
+break;
+case 307:
+tile = new Tile("door_openTop.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+    tile.isSolid = false; 
+break;
+case 501:
+tile = new DoorLevel1("door_openMid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, 1);
+    tile.isSolid = false; 
+break;
+case 502:
+tile = new DoorLevel1("door_openMid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, 2);
+    tile.isSolid = false;
+break;
+case 503:
+tile = new DoorLevel1("door_openMid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, 3);
+    tile.isSolid = false; 
+break;
+case 504:
+tile = new DoorLevel1("door_openMid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, 4);
+    tile.isSolid = false; 
+break;
+case 505:
+tile = new DoorLevel1("door_openMid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT,5);
+    tile.isSolid = false; 
+break;
+
+default:
                 tile = new Tile("grassMid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
                 tile.isSolid = true;
                     tile.isSolid = true;
