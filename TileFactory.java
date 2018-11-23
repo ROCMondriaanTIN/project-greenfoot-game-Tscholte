@@ -362,7 +362,7 @@ break;
   tile = new Tile("flagGreenHanging.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
 break;
  case 95:
-  tile = new Tile("flagRed.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+  tile = new Endpoint("flagRed.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
 break;
  case 96:
   tile = new Tile("flagRed2.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
@@ -371,7 +371,7 @@ break;
   tile = new Tile("flagRedHanging.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
   break;
  case 98:
-  tile = new Tile("flagYellow.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+  tile = new Tile ("flagYellow.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
 break;
  case 99:
   tile = new Tile("flagYellow2.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
@@ -616,20 +616,36 @@ break;
      tile.isSolid = true;
 break;
  case 179:
-  tile = new Tile("lock_blue.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-     tile.isSolid = true;
+  tile = new KeyTile("lock_blue.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, 3);
+     if (Hero.keyB==true){
+        tile.isSolid = false;
+    } else {
+         tile.isSolid = true;
+        }
 break;
  case 180:
-  tile = new Tile("lock_green.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-     tile.isSolid = true;
+  tile = new KeyTile("lock_green.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, 4);
+     if (Hero.keyG==true){
+        tile.isSolid = false;
+    } else {
+         tile.isSolid = true;
+        }
 break;
  case 181:
-  tile = new Tile("lock_red.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-     tile.isSolid = true;
+  tile = new KeyTile("lock_red.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, 1);
+     if (Hero.keyO==true){
+        tile.isSolid = false;
+    } else {
+         tile.isSolid = true;
+        }
 break;
  case 182:
-  tile = new Tile("lock_yellow.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-     tile.isSolid = true;
+  tile = new KeyTile("lock_yellow.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, 2);
+     if (Hero.keyY==true){
+        tile.isSolid = false;
+    } else {
+         tile.isSolid = true;
+        }
 break;
  case 183:
   tile = new Tile("mushroomBrown.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
@@ -1020,6 +1036,22 @@ tile = new Water("liquidWaterTop_mid.png", TileEngine.TILE_WIDTH, TileEngine.TIL
 break;
 case 307:
 tile = new Tile("door_openTop.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+    tile.isSolid = false; 
+break;
+case 308:
+tile = new Key("keyRed.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, 1);
+    tile.isSolid = false; 
+break;
+case 309:
+tile = new Key("keyRed.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, 2);
+    tile.isSolid = false; 
+break;
+case 310:
+tile = new Key("keyRed.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, 3);
+    tile.isSolid = false; 
+break;
+case 311:
+tile = new Key("keyRed.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, 4);
     tile.isSolid = false; 
 break;
 case 501:

@@ -56,6 +56,7 @@ public class Hero extends Mover {
         velocityY += acc;
         getWorld().showText("X = " + Integer.toString(getX()),950,50);
         getWorld().showText("Y = " + Integer.toString(getY()),950,75);
+        getWorld().showText("Y = " + hasKeyBlue,950,125);
         getWorld().showText("Sterren = " + Integer.toString(Stars.stars),950,100);
         if (velocityY > gravity) {
             velocityY = gravity;
