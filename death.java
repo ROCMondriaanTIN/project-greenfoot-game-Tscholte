@@ -34,6 +34,9 @@ public class death extends World {
                 case 1: Level_1 l1 = new Level_1();
                 Greenfoot.setWorld(l1);
                 break;
+                case 2: Level_2 l2 = new Level_2();
+                Greenfoot.setWorld(l2);
+                break;
             }
         }
     }

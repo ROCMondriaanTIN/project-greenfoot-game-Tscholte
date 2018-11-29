@@ -49,5 +49,10 @@ public class Enemy extends Mover {
             x = xMin;
             getImage().mirrorHorizontally();
         }
+        
+        if (isTouching(Hero.class)){
+            death d = new death();
+            Greenfoot.setWorld(d);
+        }
     }
 }

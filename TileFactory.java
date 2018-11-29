@@ -617,35 +617,19 @@ break;
 break;
  case 179:
   tile = new KeyTile("lock_blue.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, 3);
-     if (Hero.keyB==true){
-        tile.isSolid = false;
-    } else {
-         tile.isSolid = true;
-        }
+ tile.isSolid=true;
 break;
  case 180:
   tile = new KeyTile("lock_green.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, 4);
-     if (Hero.keyG==true){
-        tile.isSolid = false;
-    } else {
-         tile.isSolid = true;
-        }
-break;
+tile.isSolid=true;
+  break;
  case 181:
   tile = new KeyTile("lock_red.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, 1);
-     if (Hero.keyO==true){
-        tile.isSolid = false;
-    } else {
-         tile.isSolid = true;
-        }
-break;
+tile.isSolid=true;
+  break;
  case 182:
   tile = new KeyTile("lock_yellow.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, 2);
-     if (Hero.keyY==true){
-        tile.isSolid = false;
-    } else {
-         tile.isSolid = true;
-        }
+    tile.isSolid=true; 
 break;
  case 183:
   tile = new Tile("mushroomBrown.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
@@ -673,7 +657,7 @@ break;
 break;
  case 208:
   tile = new Tile("plant.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-     tile.isSolid = true;
+     
 break;
  case 209:
   tile = new Tile("plantPurple.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
@@ -681,7 +665,7 @@ break;
 break;
  case 212:
   tile = new Tile("rock.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-     tile.isSolid = true;
+     
 break;
  case 213:
   tile = new Tile("rockHillLeft.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
@@ -899,7 +883,7 @@ break;
      tile.isSolid = true;
 break;
  case 270:
-  tile = new Tile("spikes.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+  tile = new Spikes("spikes.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
      tile.isSolid = true;
 break;
  case 271:
@@ -1074,6 +1058,33 @@ case 505:
 tile = new DoorLevel1("door_openMid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT,5);
     tile.isSolid = false; 
 break;
+case 312:
+tile = new Stars("star.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+    tile.isSolid = false; 
+    break;
+case 313:
+tile = new diamand("door_openMid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+    tile.isSolid = false;
+    break;
+case 314:
+tile = new HeroCoin("door_openMid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, 1);
+    tile.isSolid = false;
+    break;
+case 315:
+tile = new HeroCoin("door_openMid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, 2);
+    tile.isSolid = false;
+    break;
+case 316:
+tile = new HeroCoin("door_openMid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, 3);
+    tile.isSolid = false;
+    break;
+case 317:
+  tile = new Weight("weightChained.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+    tile.isSolid = true;
+break;
+
+
+    
 
 default:
                 tile = new Tile("grassMid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);

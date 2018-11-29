@@ -31,7 +31,6 @@ public class StartScreen extends World
     public void act(){
     if (Greenfoot.isKeyDown("space")){
         World0 l0 = new World0();
-        Level_1 l1 = new Level_1();
         Greenfoot.setWorld(l0);
         
     }

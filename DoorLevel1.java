@@ -29,12 +29,17 @@ public class DoorLevel1 extends Tile
     {   
         
         if (this.isTouching(Hero.class)){
-            World0 l0 = new World0();
-            Level_1 l1 = new Level_1();
+            
+            
            switch(wereld){
-               case 0:Greenfoot.setWorld(l0);
+               case 0: World0 l0 = new World0();
+               Greenfoot.setWorld(l0);
                break;
-               case 1:Greenfoot.setWorld(l1);
+               case 1: Level_1 l1 = new Level_1();
+               Greenfoot.setWorld(l1);
+               break;
+               case 2: Level_2 l2 = new Level_2(); 
+               Greenfoot.setWorld(l2);
                break;
                
         

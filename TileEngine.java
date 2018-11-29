@@ -127,6 +127,8 @@ public class TileEngine {
         this.world.addObject(tile, (colom * TILE_WIDTH) + TILE_WIDTH / 2, (row * TILE_HEIGHT) + TILE_HEIGHT / 2);
         // Toevoegen aan onze lokale array. Makkelijk om de tile op te halen
         // op basis van een x en y positie van de map
+        tile.x = (colom * TILE_WIDTH) + TILE_WIDTH / 2;
+        tile.y = (row * TILE_HEIGHT) + TILE_HEIGHT / 2;
         this.generateMap[row][colom] = tile;
     }
 

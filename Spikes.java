@@ -1,19 +1,20 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class LavaTile here.
+ * Write a description of class Spikes here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class LavaTile extends Tile
+public class Spikes extends Tile
 {
-    
-    
-    
-    public LavaTile(String image, int width, int heigth){
+    /**
+     * Act - do whatever the Spikes wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
+    public Spikes (String image, int width, int heigth){
         super(image, width, heigth);
-        setImage("liquidLavaTop_mid.png");
+        setImage("spikes.png");
     }
     
     

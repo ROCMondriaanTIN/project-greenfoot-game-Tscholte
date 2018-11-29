@@ -46,7 +46,6 @@ public class Key extends Tile
                 break;
                 case 3: hero.keyB=true;
                 getWorld().removeObject(this);
-                Hero.hasKeyBlue = true;
                 break;
                 case 4: hero.keyG=true;
                 getWorld().removeObject(this);

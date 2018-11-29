@@ -6,15 +6,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Stars extends Mover
+public class Stars extends Tile
 {
-    
     public static int stars;
-     static boolean isCollected;
-    public Stars(){
-        super();
+    boolean isCollected;
+    public Stars(String image, int width, int heigth){
+        super(image, width, heigth); 
         setImage("star.png");
-        
     }
     
     /**
@@ -23,18 +21,14 @@ public class Stars extends Mover
      */
     public void act() 
     {
-        velocityY = 0;
-        applyVelocity();
         if (this.isTouching(Hero.class)){
             isCollected = true;
             stars++;
             getWorld().removeObject(this);
             return;
         }
-        
         if (isCollected==true){
-            
+            getWorld().removeObject(this);
         }
-        
     }    
 }

@@ -15,9 +15,9 @@ public class Hero extends Mover {
     public static int Dc;
     public static int stars;
     public static boolean Rihanna;
-    public static int Spring;
-    public static int Aspeed;
-    public static int Dspeed;
+    public int Spring;
+    public int Aspeed;
+    public int Dspeed;
     public static boolean keyG;
     public static boolean keyB;
     public static boolean keyY;
@@ -56,7 +56,6 @@ public class Hero extends Mover {
         velocityY += acc;
         getWorld().showText("X = " + Integer.toString(getX()),950,50);
         getWorld().showText("Y = " + Integer.toString(getY()),950,75);
-        getWorld().showText("Y = " + hasKeyBlue,950,125);
         getWorld().showText("Sterren = " + Integer.toString(Stars.stars),950,100);
         if (velocityY > gravity) {
             velocityY = gravity;
@@ -100,7 +99,7 @@ public class Hero extends Mover {
     public void handleInput() {
         
         
-        if (Greenfoot.isKeyDown("w") && opGrond() == true) {
+        if (Greenfoot.isKeyDown("w")/* && opGrond() == true*/) {
             setImage(J);
             velocityY = Spring;
             
@@ -126,9 +125,11 @@ public class Hero extends Mover {
                 animation();
             }
         }
-
         if (Greenfoot.isKeyDown("s")) {
             setImage(D);
+        }
+        if (velocityX == 0) {
+            setImage(S);
         }
         
         

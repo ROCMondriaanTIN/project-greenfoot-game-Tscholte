@@ -39,23 +39,25 @@ public class KeyTile extends Tile
         
                 if (type==1 && hero.keyO==true){
                     setImage("nuthing.png");
+                    this.isSolid=false;
                 }
             
                 if (hero.keyY==true && type==2){
                     setImage("nuthing.png");
+                    this.isSolid=false;
                 }
             
                 if (hero.keyB==true && type==3){
                      setImage("nuthing.png");
+                     this.isSolid=false;
                 }
              
                 if (hero.keyG=true && type==4){
                     setImage("nuthing.png");
+                    this.isSolid=false;
                 }
                     
-                public void remove() {
-                getworld().removeObject(this);
-                }
+                
         
     }    
 }

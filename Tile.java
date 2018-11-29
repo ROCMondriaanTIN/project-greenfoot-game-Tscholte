@@ -10,6 +10,8 @@ public class Tile extends Actor {
     public boolean isSolid = false;
     private static int id;
     public int _id;
+    int x;
+    int y;
 
     /**
      * Contructor of the tile. Creates a tile based on image, width and height
@@ -23,7 +25,7 @@ public class Tile extends Actor {
         setImage(image);
         getImage().scale(width, heigth);
         if (CollisionEngine.DEBUG) {
-            getImage().drawString("ÏD: " + id, 10, 10);
+            getImage().drawString("ID: " + id, 10, 10);
         }
         _id = id;
         id++;

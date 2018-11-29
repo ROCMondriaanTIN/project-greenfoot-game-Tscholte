@@ -6,10 +6,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class diamand extends Mover
+public class diamand extends Tile
 {
-    public diamand(){
-        super();    
+    public diamand(String image, int width, int heigth){
+        super(image, width, heigth);    
         setImage("hud_gem_blue.png");
     }
     
@@ -19,13 +19,10 @@ public class diamand extends Mover
      */
     public void act() 
     {
-        velocityY=0;
-        applyVelocity();
         if (this.isTouching(Hero.class)){
             Hero.Rihanna = true;
             getWorld().removeObject(this);
             return;
         }
-        
     }    
 }
