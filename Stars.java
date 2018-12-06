@@ -9,7 +9,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Stars extends Tile
 {
     public static int stars;
-    boolean isCollected;
+    public static int isCollected;
+    public static int allStars;
     public Stars(String image, int width, int heigth){
         super(image, width, heigth); 
         setImage("star.png");
@@ -21,14 +22,11 @@ public class Stars extends Tile
      */
     public void act() 
     {
+        allStars = stars + isCollected;
         if (this.isTouching(Hero.class)){
-            isCollected = true;
-            stars++;
+            isCollected ++;
             getWorld().removeObject(this);
             return;
-        }
-        if (isCollected==true){
-            getWorld().removeObject(this);
         }
     }    
 }

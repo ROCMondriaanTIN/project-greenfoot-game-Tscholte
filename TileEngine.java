@@ -14,7 +14,8 @@ public class TileEngine {
     public static int SCREEN_WIDTH;
     public static int MAP_WIDTH;
     public static int MAP_HEIGHT;
-
+    public int x;
+    public int y;
     private World world;
     private int[][] map;
     private Tile[][] generateMap;
@@ -130,10 +131,11 @@ public class TileEngine {
         // breedte en hoogte optellen zodat de X en Y links boven zit voor 
         // het toevoegen van het object.
         this.world.addObject(tile, (colom * TILE_WIDTH) + TILE_WIDTH / 2, (row * TILE_HEIGHT) + TILE_HEIGHT / 2);
+        tile.x=(colom * TILE_WIDTH) + TILE_WIDTH / 2;
+        tile.y=(row * TILE_HEIGHT) + TILE_HEIGHT / 2;
+        
         // Toevoegen aan onze lokale array. Makkelijk om de tile op te halen
         // op basis van een x en y positie van de map
-        tile.x = (colom * TILE_WIDTH) + TILE_WIDTH / 2;
-        tile.y = (row * TILE_HEIGHT) + TILE_HEIGHT / 2;
         this.generateMap[row][colom] = tile;
         tile.setColom(colom);
         tile.setRow(row);

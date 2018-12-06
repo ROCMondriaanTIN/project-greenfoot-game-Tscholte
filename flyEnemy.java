@@ -55,7 +55,10 @@ public class flyEnemy extends Mover
             getImage().mirrorHorizontally();
             q=1;
         }
-  
+        
+        if (isTouching(Hero.class)){
+            Hero.isDead=true;
+        }
     }
 }
 

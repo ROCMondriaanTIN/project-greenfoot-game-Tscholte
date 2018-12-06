@@ -9,8 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Falling extends Mover
 {
     
-    public boolean trap = false;
-    public int number;
+    
     public int speed =5;
     public Falling (){
         super();
@@ -24,8 +23,7 @@ public class Falling extends Mover
     {
         
         if (isTouching(Hero.class)){
-            death d = new death();
-            Greenfoot.setWorld(d);
+            Hero.isDead=true;
         }
         velocityY = speed; 
         applyVelocity();

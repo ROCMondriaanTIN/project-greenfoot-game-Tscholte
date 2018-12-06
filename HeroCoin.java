@@ -12,6 +12,7 @@ public class HeroCoin extends Tile
     public int CoinType;
     public HeroCoin(String image, int width, int heigth, int CoinType){
         super(image, width, heigth);
+        this.CoinType = CoinType;
         switch (CoinType){
             case 1:
              setImage("hud_p1.png");
@@ -34,23 +35,23 @@ public class HeroCoin extends Tile
         if (this.isTouching(Hero.class)){
             switch(CoinType){
                 case 1:
-                hero.hero="p1";
-                hero.Spring=-14;
-                hero.Aspeed=-10;
+                hero.player="p1";
+                hero.Spring= -14;
+                hero.Aspeed= -10;
                 hero.Dspeed=10;
                 getWorld().removeObject(this);
                 break;
                 case 2:
-                hero.hero="p3";
-                hero.Spring=-10;
-                hero.Aspeed=-5;
-                hero.Dspeed=5;
+                hero.player="p3";
+                hero.Spring= -10;
+                hero.Aspeed= -5;
+                hero.Dspeed= 5;
                 getWorld().removeObject(this);
                 break;
                 case 3:
-                hero.hero="p2";
-                hero.Spring=-17;
-                hero.Aspeed=-10;
+                hero.player="p2";
+                hero.Spring= -17;
+                hero.Aspeed= -10;
                 hero.Dspeed=10;
                 getWorld().removeObject(this);
                 break;

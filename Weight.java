@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Weight extends Tile
 {
+   
     boolean virgin = true;
     public Weight (String image, int width, int heigth){
         super(image, width, heigth);
@@ -20,6 +21,7 @@ public class Weight extends Tile
      */
     public void act() 
     {
+    
         if (virgin == true){
         for (Actor hero : getObjectsInRange(300, Hero.class)){
             if (hero != null){

@@ -23,6 +23,7 @@ public class Endpoint extends Tile
             World0.lvl=0;
             World0 l0 = new World0();
             Greenfoot.setWorld(l0);
+            Stars.stars += Stars.isCollected;
             
         }
     }    

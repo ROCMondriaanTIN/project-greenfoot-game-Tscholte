@@ -38,10 +38,26 @@ public class DoorLevel1 extends Tile
                case 1: Level_1 l1 = new Level_1();
                Greenfoot.setWorld(l1);
                break;
-               case 2: Level_2 l2 = new Level_2(); 
-               Greenfoot.setWorld(l2);
+               case 2: if (Stars.stars >= 2){
+                   Level_2 l2 = new Level_2(); 
+                   Greenfoot.setWorld(l2);
+                }
+               
+               break;
+               case 3:  if (Stars.stars >= 4){
+                   Level_3 l3 = new Level_3();
+                   Greenfoot.setWorld(l3);
+               }
+               break;
+               case 4:  if (Stars.stars >= 8){
+                   
+                }
                break;
                
+               case 5:  if (Hero.Rihanna = true){
+                
+                }
+               break;
         
             }
         }

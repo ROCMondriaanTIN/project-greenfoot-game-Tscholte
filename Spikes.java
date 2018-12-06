@@ -26,8 +26,7 @@ public class Spikes extends Tile
     public void act() 
     {
         if (isTouching(Hero.class)){
-            death d = new death();
-            Greenfoot.setWorld(d);
+            Hero.isDead=true;
         }
     }   
 }    

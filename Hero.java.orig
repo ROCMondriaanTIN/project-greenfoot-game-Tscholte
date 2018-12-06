@@ -15,22 +15,20 @@ public class Hero extends Mover {
     public static int Dc;
     public static int stars;
     public static boolean Rihanna;
-    public static int Spring;
-    public static int Aspeed;
-    public static int Dspeed;
+    public int Spring;
+    public int Aspeed;
+    public int Dspeed;
     public static boolean keyG;
     public static boolean keyB;
     public static boolean keyY;
     public static boolean keyO;
     public static boolean isDead;
-    public static String player = "p1";
+    public static String hero = "p1";
     public static String J;
     public static String S;
     public static String H;
     public static String W;
     public static String D;
-    public int Y;
-    public int X;
     
     public Hero() {
         super();
@@ -46,15 +44,13 @@ public class Hero extends Mover {
 
     @Override
     public void act() {
-        J = player + "_jump.png";
-        S = player + "_stand.png";
-        H = player + "_hurt.png";
-        W = player + "_walk";
-        D = player + "_duck.png";
+        J = hero + "_jump.png";
+        S = hero + "_stand.png";
+        H = hero + "_hurt.png";
+        W = hero + "_walk";
+        D = hero + "_duck.png";
         handleInput();
-        
-        X = getX();
-        Y = getY();
+        getWorld().getObjects(Stars.class);
         
         velocityX *= drag;
         velocityY += acc;
@@ -65,6 +61,32 @@ public class Hero extends Mover {
             velocityY = gravity;
         }
         applyVelocity();
+        
+        
+        
+        
+        
+        
+        
+        for (HeroCoin coin : getIntersectingObjects(HeroCoin.class)) {
+            if (coin != null){
+                getWorld().removeObject(coin);
+                setImage(S);
+                return;
+            }
+        }
+        
+        
+        for (Actor lava : getIntersectingObjects(LavaTile.class)) {
+            if (lava != null) {
+                setImage(H);
+                isDead=true;
+                Dc ++;
+                hero="p1";
+                stars=0;
+                return;
+            }
+        }
        
     }
     
@@ -75,18 +97,18 @@ public class Hero extends Mover {
     }
     
     public void handleInput() {
-        if (Greenfoot.isKeyDown("q")){
-            setImage(J);
-            velocityY = Spring;
-            
-            
-        }
+<<<<<<< HEAD
         
-        if (Greenfoot.isKeyDown("w") /*&& opGrond() == true*/) {
+        
+        if (Greenfoot.isKeyDown("w")/* && opGrond() == true*/) {
             setImage(J);
             velocityY = Spring;
             
             
+=======
+        if (Greenfoot.isKeyDown("w")) {
+            velocityY = -20;
+>>>>>>> 4372fff5ea53a9c16ee13c8083969eac7aeee2f9
         }
 
         if (Greenfoot.isKeyDown("a")) {
