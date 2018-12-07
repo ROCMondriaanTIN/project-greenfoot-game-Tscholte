@@ -52,7 +52,7 @@ public class KeyTile extends Tile
                      this.isSolid=false;
                 }
              
-                if (hero.keyG=true && type==4){
+                if (hero.keyG==true && type==4){
                     setImage("nuthing.png");
                     this.isSolid=false;
                 }

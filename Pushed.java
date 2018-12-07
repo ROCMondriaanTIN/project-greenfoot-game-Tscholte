@@ -11,10 +11,11 @@ public class Pushed extends Mover
     Hero hero;
     int Xoud;
     boolean firstAct = true;
+    static boolean change;
     public Pushed (){
         super();
         setImage("boxAlt.png");
-        
+        change = false;
     }
     /**
      * Act - do whatever the pushed wants to do. This method is called whenever
@@ -29,11 +30,10 @@ public class Pushed extends Mover
         
         if (hero.player =="p2"){
             
-            if (isTouching(Hero.class) && x<hero.X){
+            if (isTouching(Hero.class) && Greenfoot.isKeyDown("d")){
                 Xoud = x;
                 velocityX=hero.Dspeed;
-                
-            } else if (isTouching(Hero.class) && x>hero.X){
+            } else if (isTouching(Hero.class) && Greenfoot.isKeyDown("a")){
                 Xoud = x;
                 velocityX=hero.Aspeed;
             }
@@ -41,6 +41,7 @@ public class Pushed extends Mover
         
         if (isTouching(boxInv.class)){
                getWorld().removeObject(this);
+               change = true;
         }
         
         if (x <= (Xoud-20)){

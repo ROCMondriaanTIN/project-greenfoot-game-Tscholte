@@ -10,7 +10,6 @@ public class boxInv extends Tile
 {
     public boxInv (String image, int width, int heigth){
         super(image, width, heigth);
-        setImage("nuthing.png");
     }
     /**
      * Act - do whatever the boxInv wants to do. This method is called whenever
@@ -18,9 +17,13 @@ public class boxInv extends Tile
      */
     public void act() 
     {
-        if (isTouching(box.class)){
+        if (Pushed.change == true){
             setImage("boxAlt.png");
             this.isSolid= true;
-        }
+        } else{
+            setImage("nuthing.png");
+            this.isSolid= false;
+        } 
+        
     }    
 }

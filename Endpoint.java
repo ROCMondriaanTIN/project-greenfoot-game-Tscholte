@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Endpoint extends Tile
 {
+    DoorLevel1 door;
     public Endpoint(String image, int width, int heigth){
         super(image, width, heigth);
         
@@ -24,7 +25,7 @@ public class Endpoint extends Tile
             World0 l0 = new World0();
             Greenfoot.setWorld(l0);
             Stars.stars += Stars.isCollected;
-            
+            Stars.isCollected = 0;
         }
     }    
 }

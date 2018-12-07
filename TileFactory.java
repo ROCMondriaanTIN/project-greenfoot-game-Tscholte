@@ -18,19 +18,19 @@ public class TileFactory {
      tile.isSolid = true;
 break;
  case 1:
-  tile = new Tile("bomb.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-     tile.isSolid = true;
+  tile = new boxInv("nuthing.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+     tile.isSolid = false;
 break;
  case 2:
   tile = new Tile("bombFlash.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
      tile.isSolid = true;
 break;
  case 3:
-  tile = new Tile("box.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+  tile = new box("boxAlt.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
      tile.isSolid = true;
 break;
  case 4:
-  tile = new box("boxAlt.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+  tile = new Tile("box.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
      tile.isSolid = true;
 break;
  case 5:
@@ -1017,8 +1017,24 @@ case 306:
 tile = new Water("liquidWaterTop_mid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
     tile.isSolid = true; 
 break;
-case 307:
-tile = new Tile("door_openTop.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+case 370:
+tile = new DoorTop("door_openTop.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, 1);
+    tile.isSolid = false; 
+break;
+case 371:
+tile = new DoorTop("door_openTop.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, 2);
+    tile.isSolid = false; 
+break;
+case 372:
+tile = new DoorTop("door_openTop.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, 3);
+    tile.isSolid = false; 
+break;
+case 373:
+tile = new DoorTop("door_openTop.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, 4);
+    tile.isSolid = false; 
+break;
+case 374:
+tile = new DoorTop("door_openTop.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, 5);
     tile.isSolid = false; 
 break;
 case 308:
