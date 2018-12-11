@@ -5,9 +5,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name)
  */
 public class death extends World {
-
-    
-    
     /**
      * Constructor for objects of class CopyOfMyWorld.
      *
@@ -24,7 +21,6 @@ public class death extends World {
         
     @Override
     public void act() {
-        Stars.isCollected = 0;
         if (Greenfoot.isKeyDown("space")){
             Hero.isDead=false;
             Hero.player="p1";
@@ -43,6 +39,9 @@ public class death extends World {
                 break;
                 case 4: Level_4 l4 = new Level_4();
                 Greenfoot.setWorld(l4);
+                break;
+                case 5: MyWorld mw = new MyWorld();
+                Greenfoot.setWorld(mw);
                 break;
             }
         }

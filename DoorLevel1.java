@@ -20,10 +20,7 @@ public class DoorLevel1 extends Tile
     static boolean firstTime4 = true;
     int open;
     public DoorLevel1(String image, int width, int heigth, int wereld){
-        super(image, width, heigth);
-        if(wereld != 1){
-            setImage("door_closedMid.png");
-        }
+        super("door_closedMid.png", width, heigth);
         this.wereld = wereld;
         
         
@@ -63,7 +60,7 @@ public class DoorLevel1 extends Tile
                    firstTime2 = false;
                    break;
                    case 4:  if (firstTime3 == true){
-                       if (Stars.stars >= 8){
+                       if (Stars.stars >= 8){ 
                            Level_4 l4 = new Level_4();
                            Greenfoot.setWorld(l4);
                        }
@@ -72,7 +69,8 @@ public class DoorLevel1 extends Tile
                    break;
                    case 5:  if (firstTime4 == true){
                        if (Hero.Rihanna == true){
-                              
+                            MyWorld mw = new MyWorld();
+                            Greenfoot.setWorld(mw);
                        }
                    }
                    firstTime4 = false;
@@ -105,7 +103,7 @@ public class DoorLevel1 extends Tile
                     return false;
                 }
                 
-                case 5: if (Hero.Rihanna ==true){
+                case 5: if (Hero.Rihanna == true){
                     return true;
                 } else {
                     return false;
