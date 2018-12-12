@@ -24,6 +24,7 @@ public class Stars extends Tile
     {
         allStars = stars + isCollected;
         if (this.isTouching(Hero.class)){
+            Greenfoot.playSound("power.mp3");
             isCollected ++;
             getWorld().removeObject(this);
             return;

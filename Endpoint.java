@@ -21,11 +21,12 @@ public class Endpoint extends Tile
     public void act() 
     {
          if (this.isTouching(Hero.class)){ 
-            World0.lvl=0;
-            World0 l0 = new World0();
-            Greenfoot.setWorld(l0);
-            Stars.stars += Stars.isCollected;
-            Stars.isCollected = 0;
+                Greenfoot.playSound("level.wav");
+                World0.lvl=0;
+                World0 l0 = new World0();
+                Greenfoot.setWorld(l0);
+                Stars.stars += Stars.isCollected;
+                Stars.isCollected = 0;
         }
     }    
 }

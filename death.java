@@ -13,7 +13,7 @@ public class death extends World {
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 800, 1, false);
         this.setBackground("game_over.png");
-        
+        Greenfoot.playSound("deathsound.wav");
 
         
         
@@ -24,6 +24,7 @@ public class death extends World {
         if (Greenfoot.isKeyDown("space")){
             Hero.isDead=false;
             Hero.player="p1";
+            Stars.isCollected = 0;
             switch (World0.lvl){
                 case 0: World0 w = new World0();
                 Greenfoot.setWorld(w);

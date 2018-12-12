@@ -131,9 +131,9 @@ public class Level_4 extends World
         ce.update();
         
         if (Hero.isDead==true){
-            
             death d = new death();
             Greenfoot.setWorld(d);
+            Hero.keyG=false;
         }
         
         

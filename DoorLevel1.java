@@ -34,8 +34,8 @@ public class DoorLevel1 extends Tile
     {   
         if (canEnter() == true){
             setImage("door_openMid.png");
-        
             if (this.isTouching(Hero.class)){
+                Greenfoot.playSound("nextlevel.mp3");
                 switch(wereld){
                    case 1:if (firstTime == true ){
                        Level_1 l1 = new Level_1();
@@ -44,34 +44,27 @@ public class DoorLevel1 extends Tile
                    firstTime = false;
                    break;
                    case 2: if (firstTime1 == true){
-                       if (Stars.stars >= 2){
                            Level_2 l2 = new Level_2(); 
                            Greenfoot.setWorld(l2);
-                       }
                    }
                    firstTime1 = false;
                    break;
                    case 3:  if (firstTime2 == true){
-                       if (Stars.stars >= 4){
                            Level_3 l3 = new Level_3();
                            Greenfoot.setWorld(l3);
-                       }
                    }    
                    firstTime2 = false;
                    break;
                    case 4:  if (firstTime3 == true){
-                       if (Stars.stars >= 8){ 
                            Level_4 l4 = new Level_4();
                            Greenfoot.setWorld(l4);
-                       }
+                       
                    }    
                    firstTime3 = false;
                    break;
                    case 5:  if (firstTime4 == true){
-                       if (Hero.Rihanna == true){
                             MyWorld mw = new MyWorld();
                             Greenfoot.setWorld(mw);
-                       }
                    }
                    firstTime4 = false;
                    break;

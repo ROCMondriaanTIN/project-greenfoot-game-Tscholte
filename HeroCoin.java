@@ -33,6 +33,7 @@ public class HeroCoin extends Tile
     public void act() 
     {
         if (this.isTouching(Hero.class)){
+            Greenfoot.playSound("power3.wav");
             switch(CoinType){
                 case 1:
                 hero.player="p1";

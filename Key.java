@@ -36,7 +36,7 @@ public class Key extends Tile
     public void act() 
     {
         if (this.isTouching(Hero.class)){
-            
+            Greenfoot.playSound("power2.wav");
             switch(type){
                 case 1: hero.keyO=true;
                 getWorld().removeObject(this);

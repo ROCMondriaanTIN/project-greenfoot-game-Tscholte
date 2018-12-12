@@ -5,7 +5,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author R. Springer
  */
 public class MyWorld extends World {
-
+    Hero hero;
     private CollisionEngine ce;
 
     /**
@@ -66,10 +66,16 @@ public class MyWorld extends World {
         ce = new CollisionEngine(te, camera);
         // Toevoegen van de mover instantie of een extentie hiervan
         ce.addCollidingMover(hero);
+        World0.lvl=5;
+        
     }
 
     @Override
     public void act() {
         ce.update();
+        if (hero.isDead==true){
+            death d = new death();
+            Greenfoot.setWorld(d);
+        }
     }
 }

@@ -8,9 +8,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class diamand extends Tile
 {
+    boolean isCollected;
     public diamand(String image, int width, int heigth){
         super(image, width, heigth);    
         setImage("hud_gem_blue.png");
+        
     }
     
     /**
@@ -19,9 +21,15 @@ public class diamand extends Tile
      */
     public void act() 
     {
+        if (isCollected == true){
+            getWorld().removeObject(this);
+        }
+        
         if (this.isTouching(Hero.class)){
+            Greenfoot.playSound("diamand.mp3");
             Hero.Rihanna = true;
             getWorld().removeObject(this);
+            isCollected=true;
             return;
         }
     }    

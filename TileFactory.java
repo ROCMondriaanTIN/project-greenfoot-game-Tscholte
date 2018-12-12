@@ -1069,9 +1069,10 @@ case 504:
 tile = new DoorLevel1("door_openMid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, 4);
     tile.isSolid = false; 
 break;
-case 507:
+case 505:
 tile = new DoorLevel1("door_openMid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, 5);
     tile.isSolid = false;
+    break;
 case 312:
 tile = new Stars("star.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
     tile.isSolid = false; 

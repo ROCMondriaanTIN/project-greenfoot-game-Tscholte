@@ -83,6 +83,7 @@ public class Hero extends Mover {
         }
         
         if (Greenfoot.isKeyDown("w") && opGrond() == true) {
+            Greenfoot.playSound("jump.wav");
             setImage(J);
             velocityY = Spring;
             
