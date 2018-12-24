@@ -13,6 +13,7 @@ public class DoorTop extends Tile
     public DoorTop(String image, int width, int heigth, int wereld){
         super("door_closedTop.png", width, heigth);
         this.wereld = wereld;
+        this.isSolid = true;
     }
     /**
      * Act - do whatever the DoorTop wants to do. This method is called whenever

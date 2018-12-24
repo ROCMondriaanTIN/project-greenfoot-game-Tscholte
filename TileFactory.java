@@ -217,7 +217,7 @@ break;
      tile.isSolid = true;
 break;
  case 51:
-  tile = new Tile("chain.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+  tile = new Rope("chain.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
   break;
  case 52:
   tile = new Tile("cloud1.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
@@ -656,7 +656,7 @@ break;
      tile.isSolid = true;
 break;
  case 208:
-  tile = new Tile("plant.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+  tile = new BackgroundTile("plant.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
      
 break;
  case 209:
@@ -664,7 +664,7 @@ break;
      tile.isSolid = true;
 break;
  case 212:
-  tile = new Tile("rock.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+  tile = new BackgroundTile("rock.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
      
 break;
  case 213:
@@ -676,7 +676,7 @@ break;
      tile.isSolid = true;
 break;
  case 215:
-  tile = new Tile("ropeAttached.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+  tile = new Rope("ropeAttached.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
      tile.isSolid = true;
 break;
  case 216:
@@ -684,7 +684,7 @@ break;
      tile.isSolid = true;
 break;
  case 217:
-  tile = new Tile("ropeVertical.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+  tile = new Rope("ropeVertical.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
 break;
  case 218:
   tile = new Tile("sand.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
@@ -1010,7 +1010,7 @@ case 303:
      tile.isSolid = true;
 break;
 case 305:
-tile = new LavaTile("liquidLavaTop_mid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+tile = new Water("liquidLavaTop_mid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
      tile.isSolid = true;
 break;
 case 306:

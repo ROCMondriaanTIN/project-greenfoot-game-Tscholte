@@ -22,7 +22,7 @@ public class DoorLevel1 extends Tile
     public DoorLevel1(String image, int width, int heigth, int wereld){
         super("door_closedMid.png", width, heigth);
         this.wereld = wereld;
-        
+        this.isSolid = true;
         
     }
     

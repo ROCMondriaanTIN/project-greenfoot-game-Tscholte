@@ -6,7 +6,7 @@ import greenfoot.*;
  * @author R. Springer
  */
 public class Hero extends Mover {
-    
+    Tile tile;
     public double gravity;
     public double acc;
     public double drag;
@@ -71,7 +71,7 @@ public class Hero extends Mover {
     public boolean opGrond()
     {
         Actor onder=getOneObjectAtOffset(0,getImage().getHeight()/2,Tile.class);
-        return onder!=null;
+            return onder!=null;
     }
     
     public void handleInput() {
@@ -83,10 +83,14 @@ public class Hero extends Mover {
         }
         
         if (Greenfoot.isKeyDown("w") && opGrond() == true) {
-            Greenfoot.playSound("jump.wav");
-            setImage(J);
-            velocityY = Spring;
-            
+            if (this.isTouching(BackgroundTile.class) == false){
+                setImage(J);
+                velocityY = Spring;
+                if(this.isTouching(Rope.class) == false && this.isTouching
+                (DoorTop.class) == false){
+                    Greenfoot.playSound("jump.wav");
+                }
+            }
             
         }
 
